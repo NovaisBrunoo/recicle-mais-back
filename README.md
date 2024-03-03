@@ -1,1 +1,0 @@
-# Recicle Mais - Backend
