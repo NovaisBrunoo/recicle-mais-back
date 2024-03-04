@@ -16,10 +16,10 @@ export class UserService {
       throw new Error("Este email já esta sendo utilizado.")
     }
 
-    const newUser = await this.prisma.user.create({
+    const user = await this.prisma.user.create({
       data,
     })
-    return newUser
+    return user
   }
 
 
