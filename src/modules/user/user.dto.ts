@@ -1,5 +1,5 @@
 export type UserDTO = {
-  id?: any;
+  id: number;
   fullname: string;
   password: string;
   email: string;
