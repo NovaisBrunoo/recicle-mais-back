@@ -8,11 +8,13 @@ datasource db {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  fullname String
-  password String
-  email    String @unique
-  phone    String
+  id        Int    @id @default(autoincrement())
+  fullname  String
+  password  String
+  email     String @unique
+  phone     String
+  user_type String
+  avatar    String
 
   @@map("users")
 }
