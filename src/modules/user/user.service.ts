@@ -1,11 +1,13 @@
-import { Injectable, ConflictException } from '@nestjs/common';
-import { PrismaService } from 'src/database/PrismaService';
-import { UserDTO } from './user.dto';
+import { ConflictException, Injectable } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { isEmail } from 'class-validator';
+import { PrismaService } from 'src/database/PrismaService';
+import { UserDTO } from './user.dto';
+
 @Injectable()
 export class UserService {
   constructor(private prisma: PrismaService) {}
+
   async create(data: UserDTO) {
     if (!isEmail(data.email)) {
       throw new ConflictException({ message: 'Formato de e-mail inválido.' });
