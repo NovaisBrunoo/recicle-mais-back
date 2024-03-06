@@ -1,4 +1,4 @@
-import { Injectable,ConflictException } from '@nestjs/common';
+import { Injectable,ConflictException, NotFoundException } from '@nestjs/common';
 import { PrismaService } from 'src/database/PrismaService';
 import { UserDTO } from './user.dto';
 import * as bcrypt from 'bcrypt';
@@ -29,5 +29,18 @@ export class UserService {
     return user
   }
 
+  async findOne(id: number): Promise<UserDTO> {
+    const user = await this.prisma.user.findUnique({
+      where: {
+        id: id ,
+      }
+    });
+    
+    if (!user) {
+      throw new NotFoundException('Usuário não encontrado');
+    }
+
+    return { user.fullname}
+  }
 
 }
