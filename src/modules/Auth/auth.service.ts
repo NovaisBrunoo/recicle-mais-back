@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
 import { PrismaService } from 'src/database/PrismaService';
-import { jwtConstants } from './jwt.config';
+import { jwtConstants } from '../../utils/jwt.config';
 
 @Injectable()
 export class AuthService {
