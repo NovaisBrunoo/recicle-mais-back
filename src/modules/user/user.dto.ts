@@ -6,4 +6,4 @@ export type UserDTO = {
   phone: string;
   user_type: string;
   avatar: string;
-}
+};
