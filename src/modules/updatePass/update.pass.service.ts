@@ -26,7 +26,7 @@ export class UpdatePassService {
     }
 
     const token = authorization.split(' ')[1];
-    console.log(token, 'token');
+
     const payload = this.validateToken(token);
 
     try {
