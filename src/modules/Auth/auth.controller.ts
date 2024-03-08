@@ -4,8 +4,14 @@ import {
   Post,
   HttpException,
   HttpStatus,
+  UseGuards,
+  Get,
+  Request,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
+
+
 
 @Controller('auth')
 export class AuthController {
@@ -20,6 +26,13 @@ export class AuthController {
       return { token };
     } catch (error) {
       throw new HttpException('Credenciais inválidas', HttpStatus.UNAUTHORIZED);
-    }
+    } 
+  }
+
+  
+  @Get('profile')
+  @UseGuards(AuthGuard) 
+  showUser(@Request() req) {
+    return req.user;
   }
 }

@@ -1,14 +1,15 @@
-import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
+import { ConflictException, Injectable} from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { isEmail } from 'class-validator';
 import { PrismaService } from 'src/database/PrismaService';
 import { UserDTO } from './user.dto';
 
+export type User = any
 @Injectable()
 export class UserService {
   constructor(private prisma: PrismaService) {}
 
-  async create(data: UserDTO) {
+  async createUser(data: UserDTO) {
     if (!isEmail(data.email)) {
       throw new ConflictException({ message: 'Formato de e-mail inválido.' });
     }
@@ -33,26 +34,11 @@ export class UserService {
     const { password, ...newUser } = user;
     return newUser;
   }
-  async findById(id: number): Promise<{ id: number; name: string; avatar: string; email: string; phone: string }> {
-    const user = await this.prisma.user.findUnique({
-      where: {
-        id: id, 
-      },
-      select: {
-        id: true,
-        fullname: true,
-        avatar: true,
-        email: true,
-        phone: true
-      }
-    });
-  
-    if (!user) {
-      throw new NotFoundException('Usuário não encontrado');
-    }
-  
-    return { id: user.id, name: user.fullname, avatar: user.avatar, email: user.email, phone: user.phone };
-  }
-  
 
+   private readonly users = this.prisma.user.findMany();
+  async findOne(fullname: string): Promise<User | undefined> {
+
+    return (await this.users).find((user) => user.fullname === fullname);
+  }
+ 
 }
