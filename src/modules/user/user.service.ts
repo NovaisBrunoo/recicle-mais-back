@@ -1,14 +1,15 @@
-import { ConflictException, Injectable } from '@nestjs/common';
+import { ConflictException, Injectable} from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { isEmail } from 'class-validator';
 import { PrismaService } from 'src/database/PrismaService';
 import { UserDTO } from './user.dto';
 
+export type User = any
 @Injectable()
 export class UserService {
   constructor(private prisma: PrismaService) {}
 
-  async create(data: UserDTO) {
+  async createUser(data: UserDTO) {
     if (!isEmail(data.email)) {
       throw new ConflictException({ message: 'Formato de e-mail inválido.' });
     }
@@ -30,6 +31,14 @@ export class UserService {
         password: hash,
       },
     });
-    return user;
+    const { password, ...newUser } = user;
+    return newUser;
   }
+
+   private readonly users = this.prisma.user.findMany();
+  async findOne(fullname: string): Promise<User | undefined> {
+
+    return (await this.users).find((user) => user.fullname === fullname);
+  }
+ 
 }
