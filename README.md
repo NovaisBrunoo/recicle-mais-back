@@ -13,7 +13,7 @@
 
 ![nest][NEST__BADGE]
 ![typescript][TYPESCRIPT__BADGE]
-!![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
 
@@ -70,10 +70,10 @@ Here has the list of the main routes until now, and what are their expected requ
 ​
 | route | description  
 |----------------------|-----------------------------------------------------
-| <kbd>POST /user</kbd> | register user(#get-auth-detail)
-| <kbd>DELETE /delete-user/:id</kbd> | delete selected user (#post-auth-detail)
-| <kbd>POST /auth/login</kbd> | User Login (#get-auth-detail)
-| <kbd>POST /updatePass/update-password</kbd> | Update user password (#get-auth-detail)
+| <kbd>POST /user</kbd> | register user
+| <kbd>DELETE /delete-user/:id</kbd> | delete selected user 
+| <kbd>POST /auth/login</kbd> | User Login 
+| <kbd>POST /updatePass/update-password</kbd> | Update user password 
 
 <h3 id="post-user-register">POST /user</h3>
 To register user.
@@ -165,27 +165,23 @@ Back-end developers
     <td align="center">
       <a href="https://github.com/Glaucia-S-Castro">
         <sub>
-          <b>Glaucia Castro</b>
+          <p>Glaucia Castro</p>
         </sub>
       </a>
     </td>
-    </br>
     <td align="center">
       <a href="https://github.com/isabeldiana">
         <sub>
-          <b>Isabel Diana</b>
+          <p>Isabel Diana</p>
         </sub>
       </a>
     </td>
-     </br>
     <td align="center">
       <a href="https://github.com/EduardoNunes">
         <sub>
-          <b>Eduardo L. Nunes</b>
+          <p>Eduardo L. Nunes</p>
         </sub>
       </a>
     </td>
   </tr>
 </table>
-
-<h2 id="contribute">📫 Contribute</h2>
