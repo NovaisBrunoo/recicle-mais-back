@@ -9,14 +9,13 @@
 [MONGO_BADGE]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
 [AWS_BADGE]: https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white
 
-<h1 align="center" style="font-weight: bold;">Reciclie Mais - Back-End💻</h1>
+<h1 align="center" style="font-weight: bold;">Recicle Mais - Back-End💻</h1>
 
 ![nest][NEST__BADGE]
 ![typescript][TYPESCRIPT__BADGE]
-![nodejs][NODEJS__BADGE]
-![jwt][JWT__BADGE]
-![bcrypt][BCRIPT__BADGE]
-![prisma][PRISMA__BADGE]
+!![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
 
 <p align="center">
  <a href="#started">Getting Started</a> • 
@@ -31,20 +30,22 @@
 
 <h2> Install </h2>
 
+```bash
 npm install
+```
 
 <h2 id="started">🚀 Getting started</h2>
 
+```bash
 npm run start:dev
+```
 
 <h3>Prerequisites</h3>
 
-Here you list all prerequisites necessary for running your project. For example:
-
-- [NodeJS](https://github.com/)
-- [Nest](https://github.com)
-- [JWT](https://github.com)
-- [bcrypt](https://github.com)
+- [NodeJS]
+- [Nest]
+- [JWT]
+- [bcrypt]
 
 <h3>Cloning</h3>
 
@@ -69,12 +70,13 @@ Here has the list of the main routes until now, and what are their expected requ
 ​
 | route | description  
 |----------------------|-----------------------------------------------------
-| <kbd>POST /user</kbd> | register user[response details](#get-auth-detail)
-| <kbd>DELETE /delete-user/:id</kbd> | delete selected user [request details](#post-auth-detail)
-| <kbd>POST /auth/login</kbd> | User Login [response details](#get-auth-detail)
-| <kbd>POST /updatePass/update-password</kbd> | Update user password [response details](#get-auth-detail)
+| <kbd>POST /user</kbd> | register user(#get-auth-detail)
+| <kbd>DELETE /delete-user/:id</kbd> | delete selected user (#post-auth-detail)
+| <kbd>POST /auth/login</kbd> | User Login (#get-auth-detail)
+| <kbd>POST /updatePass/update-password</kbd> | Update user password (#get-auth-detail)
 
 <h3 id="post-user-register">POST /user</h3>
+To register user.
 
 **REQUEST**
 
@@ -104,23 +106,25 @@ Here has the list of the main routes until now, and what are their expected requ
 ```
 
 <h3 id="delete-user">DELETE /delete-ser/:id</h3>
+To delete user.
 
 **REQUEST**
-/delete-ser/:id
+/delete-ser/2
 
 **RESPONSE**
 
-```json
+```bash
 Usuário removido com sucesso.
 ```
 
 <h3 id="auth-login">POST   /auth/login</h3>
+To log in and receive an authentication token.
 
 **REQUEST**
 
 ```json
 {
-  "email": "eduardolagonunes@gmail.com",
+  "email": "zedamanga@gmail.com",
   "password": "123456"
 }
 ```
@@ -150,11 +154,11 @@ Usuário removido com sucesso.
 {
   "message": "Senha atualizada com sucesso."
 }
-``` 
+```
 
-<h2 id="colab">🤝 Collaborators</h2>
+<h2 id="colab">🤝 Developores</h2>
 
-Special thank you for all people that contributed for this project.
+Back-end developers
 
 <table>
   <tr>
@@ -165,6 +169,7 @@ Special thank you for all people that contributed for this project.
         </sub>
       </a>
     </td>
+    </br>
     <td align="center">
       <a href="https://github.com/isabeldiana">
         <sub>
@@ -172,6 +177,7 @@ Special thank you for all people that contributed for this project.
         </sub>
       </a>
     </td>
+     </br>
     <td align="center">
       <a href="https://github.com/EduardoNunes">
         <sub>
